@@ -28,7 +28,8 @@ public class UserService {
 
     public String getUserName(String token, int userId, String accountType) {
         HttpEntity entity = getEntityFromToken(token);
-        ResponseEntity<String> responseEntity = restTemplate.exchange(BASE_URL + "tenmo/users/" + userId + "/" + accountType, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate.exchange(BASE_URL + "tenmo/users/" +
+                userId + "/" + accountType, HttpMethod.GET, entity, String.class);
         return responseEntity.getBody();
     }
 
